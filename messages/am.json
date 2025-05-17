@@ -44,9 +44,9 @@
       "corruptionType": "የሙስና አይነት",
       "description": "መግለጫ",
       "evidence": "ማስረጃ (ምስል ወይም ሰነድ)",
-      "suspectName": "የተጠርጣሪ ስም",
-      "suspectPosition": "የተጠርጣሪ ስራ መደብ",
-      "suspectPhone": "የተጠርጣሪ ስልክ ቁጥር"
+      "suspectName": "ጥቆማ የቀረበበት አካልአካል ስም",
+      "suspectPosition": "ጥቆማ የቀረበበት አካልአካል የየስራ መደብ",
+      "suspectPhone": "ጥቆማ የቀረበበት አካልአካል ስልክ ቁጥር"
     },
     "placeholder": {
       "corruptionType": "የሙስና አይነት ይምረጡ",

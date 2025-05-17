@@ -26,6 +26,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { ModeToggle } from "./modeToggle";
 
 interface MenuItem {
   title: string;
@@ -46,8 +47,8 @@ const Navbar = () => {
 
   const menu = t.raw("menu") as { title: string; url: string }[];
   return (
-    <section className="lg:py-4 py-2  border-b">
-      <div className="container mx-auto">
+    <section className={`lg:py-4 z-50 relative py-2  border-b   w-full `}>
+      <div className=" ">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
@@ -72,8 +73,13 @@ const Navbar = () => {
               </NavigationMenu>
             </div>
           </div>
-          <div className="py-4">
-            <LanguageSwitcher />
+          <div className="py-4 flex flex-row items-center justify-center gap-2">
+            <div>
+              <ModeToggle />
+            </div>
+            <div>
+              <LanguageSwitcher />
+            </div>
           </div>
         </nav>
 
@@ -91,8 +97,13 @@ const Navbar = () => {
               />
             </Link>
             <div className="flex flex-row items-center gap-2">
-              <div className="lg:py-4">
-                <LanguageSwitcher />
+              <div className="py-4 flex flex-row items-center justify-center gap-2">
+                <div>
+                  <ModeToggle />
+                </div>
+                <div>
+                  <LanguageSwitcher />
+                </div>
               </div>
               <Sheet>
                 <SheetTrigger asChild>

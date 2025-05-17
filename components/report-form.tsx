@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Separator } from "./ui/separator";
 import Image from "next/image";
-import { Loader } from "lucide-react";
+import { CloudUpload, Loader } from "lucide-react";
 
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
@@ -138,7 +138,7 @@ function ReportForm() {
   }, [state.message, state.errors, t]);
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-screen-sm mx-auto p-4">
       <form
         action={formAction}
         className="space-y-4 w-full"
@@ -250,7 +250,9 @@ function ReportForm() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label htmlFor="evidence">{t("reportForm.label.evidence")}</Label>
+          <div>
+            <Label htmlFor="evidence">{t("reportForm.label.evidence")}</Label>
+          </div>
           <input
             id="evidence"
             name="evidence"
@@ -265,9 +267,9 @@ function ReportForm() {
           />
           <div
             className={
-              `relative flex flex-col items-center justify-center border-2 border-dashed rounded-md p-6 transition-colors cursor-pointer ` +
+              `relative flex flex-col items-center justify-center border-2 border-dashed  rounded-md p-6 transition-colors cursor-pointer ` +
               (isDragActive
-                ? "border-primary bg-primary/10"
+                ? "border-primary bg-primary/50"
                 : "border-muted bg-muted/50 hover:bg-muted/80")
             }
             onDragOver={(e) => {
@@ -287,10 +289,13 @@ function ReportForm() {
             }}
             onClick={() => document.getElementById("evidence")?.click()}
           >
-            <span className="text-sm text-muted-foreground mb-2">
+            <span className="text-sm flex flex-col items-ceneter gap-2 justify-center text-muted-foreground mb-2">
               {selectedFile
                 ? t("reportForm.file.change")
                 : t("reportForm.file.drag")}
+              <div className="flex items-center justify-center">
+                <CloudUpload width={64} height={64} />
+              </div>
             </span>
             {selectedFile && (
               <span className="text-xs text-muted-foreground mb-2">
