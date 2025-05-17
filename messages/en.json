@@ -1,0 +1,80 @@
+{
+  "logo": {
+    "alt": "logo",
+    "title": "Yeka Report"
+  },
+  "menu": [
+    {
+      "title": "Check Status",
+      "url": "status"
+    }
+  ],
+  "hero": {
+    "badge": "Provided by Yeka Innovation Office",
+    "heading": "Yeka Innovation Office",
+    "subHeading": "Use this form to report misconduct with confidentiality and integrity.",
+    "description": "The information you provide will remain fully confidential and accessible only to authorized investigators. It will not be shared with any unauthorized parties.",
+    "subText": "Click the link below to check the status of your submission.",
+    "buttons": {
+      "primary": {
+        "text": "Check Report Status",
+        "url": "status"
+      }
+    },
+    "image": {
+      "src": "https://www.shadcnblocks.com/images/block/placeholder-1.svg",
+      "alt": "Hero section demo image showing interface components"
+    }
+  },
+  "reportForm": {
+    "section": {
+      "yourInfo": "Your Information",
+      "corruptionReport": "Corruption Report",
+      "suspectInfo": "Suspect's Information (Optional)"
+    },
+    "label": {
+      "name": "Name",
+      "optional": "(optional)",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "dateOptional": "Date (optional)",
+      "place": "Location where incident happened",
+      "officeName": "Yeka Office Where the Incident Occurred",
+      "corruptionType": "Corruption Type",
+      "description": "Description",
+      "evidence": "Evidence (image or document)",
+      "suspectName": "Suspects Name",
+      "suspectPosition": "Suspect's position",
+      "suspectPhone": "Suspect's phone number"
+    },
+    "placeholder": {
+      "corruptionType": "Select corruption type",
+      "pickDate": "Pick a date"
+    },
+    "file": {
+      "change": "Change file (drag or click)",
+      "drag": "Drag & drop or click to upload",
+      "uploading": "Uploading... {progress}%",
+      "pdf": "PDF",
+      "doc": "DOC",
+      "file": "FILE"
+    },
+    "button": {
+      "submit": "Submit Report"
+    },
+    "corruptionTypes": {
+      "bribery": "Bribery",
+      "embezzlement": "Embezzlement",
+      "fraud": "Fraud",
+      "abuseOfPower": "Abuse of Power",
+      "nepotism": "Nepotism",
+      "extortion": "Extortion",
+      "other": "Other"
+    },
+    "error": {
+      "required": "This field is required.",
+      "invalid": "Invalid value."
+    }
+  }
+}
