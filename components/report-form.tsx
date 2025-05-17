@@ -138,7 +138,7 @@ function ReportForm() {
   }, [state.message, state.errors, t]);
 
   return (
-    <div className="w-full max-w-screen-sm mx-auto p-4">
+    <div className="w-full max-w-screen-sm mx-auto ">
       <form
         action={formAction}
         className="space-y-4 w-full"

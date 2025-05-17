@@ -28,7 +28,7 @@ const Hero = () => {
   };
   return (
     <section className="my-4 min-h-screen w-full bg-background">
-      <div className="lg:grid flex flex-col items-start justify-center w-full lg:gap-8 gap-4 lg:grid-cols-2  px-4 ">
+      <div className="lg:grid flex flex-col items-start justify-center w-full lg:gap-8 gap-4 lg:grid-cols-2 mt-12  px-4 ">
         <div className="flex flex-col  justify-start text-start items-start lg:text-left w-full lg:border-r border-b lg:border-b-0 h-full">
           {hero.badge && (
             <Badge variant="outline" className=" hidden lg:block py-2  text-sm">
