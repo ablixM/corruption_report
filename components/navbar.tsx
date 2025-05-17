@@ -46,7 +46,7 @@ const Navbar = () => {
 
   const menu = t.raw("menu") as { title: string; url: string }[];
   return (
-    <section className="py-4 border-b">
+    <section className="lg:py-4 py-2  border-b">
       <div className="container mx-auto">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex">
@@ -82,10 +82,16 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <Image src={logo.src} className="max-h-8" alt={logo.alt} />
+              <Image
+                src={logo.src}
+                className="max-h-8"
+                width={32}
+                height={32}
+                alt={logo.alt}
+              />
             </Link>
             <div className="flex flex-row items-center gap-2">
-              <div className="py-4">
+              <div className="lg:py-4">
                 <LanguageSwitcher />
               </div>
               <Sheet>
@@ -102,6 +108,8 @@ const Navbar = () => {
                           src={logo.src}
                           className="max-h-8"
                           alt={logo.alt}
+                          width={32}
+                          height={32}
                         />
                       </Link>
                     </SheetTitle>

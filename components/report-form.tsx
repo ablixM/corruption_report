@@ -63,14 +63,14 @@ export function DatePicker() {
 function ReportForm() {
   const t = useTranslations();
   const initialState: State = {
-    message: undefined,
+    message: "",
     errors: {
       phone: [],
       place: [],
       officeName: [],
       corruptionType: [],
-      description: [],
       evidence: [],
+      description: [],
     },
   };
   const [state, formAction] = useActionState(createReport, initialState);
@@ -132,12 +132,6 @@ function ReportForm() {
       toast(state.message, { position: "top-center" });
     }
     // Optionally, handle field errors with a toast as well
-    if (
-      state.errors &&
-      Object.values(state.errors).some((e) => e && e.length > 0)
-    ) {
-      toast.error(t("reportForm.error.required"), { position: "top-center" });
-    }
   }, [state.message, state.errors, t]);
 
   return (
@@ -229,7 +223,7 @@ function ReportForm() {
               {t("reportForm.label.corruptionType")}
             </Label>
             <Select name="corruptionType">
-              <SelectTrigger className="w-full">
+              <SelectTrigger className="w-full text-sm">
                 <SelectValue
                   placeholder={t("reportForm.placeholder.corruptionType")}
                 />
@@ -247,9 +241,13 @@ function ReportForm() {
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="description">
-            {t("reportForm.label.description")}
+            {t("reportForm.label.description")}{" "}
+            <span className="text-red-600">*</span>
           </Label>
           <Textarea id="description" name="description" />
+          {state.errors?.description && (
+            <p className="text-sm text-red-600">{state.errors.description}</p>
+          )}
         </div>
 
         <div className="flex flex-col gap-2">
@@ -307,6 +305,8 @@ function ReportForm() {
                     src={filePreview}
                     alt="Preview"
                     className="h-16 w-16 object-cover rounded border"
+                    width={64}
+                    height={64}
                   />
                 ) : (
                   <span className="inline-block h-16 w-16 flex items-center justify-center bg-muted rounded border">

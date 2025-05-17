@@ -26,7 +26,7 @@ export async function createReport(
 
   if (!validatedFields.success) {
     return {
-      message: "Missing Fields. Failed to Create Invoice.",
+      message: "Missing Fields. Failed to Create report.",
       errors: validatedFields.error.flatten().fieldErrors,
     };
   }

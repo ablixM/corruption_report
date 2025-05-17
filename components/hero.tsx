@@ -29,31 +29,38 @@ const Hero = () => {
   return (
     <section className="my-4 min-h-screen ">
       <div className="container">
-        <div className="lg:grid flex flex-col items-start justify-center w-full gap-8 lg:grid-cols-2  px-4 md:px-0">
-          <div className="flex flex-col items-center justify-start text-center lg:items-start lg:text-left w-full lg:border-r h-full">
+        <div className="lg:grid flex flex-col items-start justify-center w-full lg:gap-8 gap-4 lg:grid-cols-2  px-4 ">
+          <div className="flex flex-col  justify-start text-start items-start lg:text-left w-full lg:border-r border-b h-full">
             {hero.badge && (
-              <Badge variant="outline" className=" py-2  text-base">
+              <Badge
+                variant="outline"
+                className=" hidden lg:block py-2  text-sm"
+              >
                 {hero.badge}
               </Badge>
             )}
-            <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
+            <h1 className="lg:my-6 my:2 text-2xl md:text-4xl font-bold text-pretty lg:text-6xl my-2">
               {hero.heading}
             </h1>
             <div className="max-w-[500px]">
-              <p className="mb-2 max-w-xl text-muted-foreground lg:text-xl">
+              <p className="mb-2 max-w-xl text-muted-foreground text-xs lg:text-xl">
                 {hero.subHeading}
               </p>
               <p>
-                <span className="text-red-500">{hero.description}</span>
+                <span className="text-red-500 text-xs lg:text-sm">
+                  {hero.description}
+                </span>
               </p>
-              <p className="mt-4 text-muted-foreground">{hero.subText}</p>
+              <p className="mt-4 text-muted-foreground text-xs lg:text-sm">
+                {hero.subText}
+              </p>
             </div>
-            <div className="flex w-full flex-col justify-center items-center gap-2 sm:flex-row lg:justify-between ">
+            <div className="flex w-full max-w-[300px] flex-col justify-center items-center gap-2 sm:flex-row lg:justify-between ">
               {hero.buttons.primary && (
-                <div className="w-full flex flex-row  items-center sm:w-auto">
+                <div className="w-full flex flex-row  items-center ">
                   <Link
                     href={hero.buttons.primary.url}
-                    className="w-full sm:w-auto font-bold  text-black hover:underline focus:ring-blue-300s rounded-lg text-md  py-2.5 text-center"
+                    className=" sm:w-auto font-bold  text-black hover:underline focus:ring-blue-300s rounded-lg text-md  py-2.5 text-center"
                   >
                     {hero.buttons.primary.text}
                   </Link>
