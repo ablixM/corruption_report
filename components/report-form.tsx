@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Separator } from "./ui/separator";
 import Image from "next/image";
+import { Loader } from "lucide-react";
 
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
@@ -73,7 +74,10 @@ function ReportForm() {
       description: [],
     },
   };
-  const [state, formAction] = useActionState(createReport, initialState);
+  const [state, formAction, isPending] = useActionState(
+    createReport,
+    initialState
+  );
 
   // Add state for file upload
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
@@ -81,7 +85,6 @@ function ReportForm() {
   const [uploadProgress, setUploadProgress] = React.useState<number>(0);
   const [isUploading, setIsUploading] = React.useState<boolean>(false);
   const [isDragActive, setIsDragActive] = React.useState(false);
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   // File preview effect
   React.useEffect(() => {
@@ -137,11 +140,7 @@ function ReportForm() {
   return (
     <div className="w-full">
       <form
-        action={async (...args) => {
-          setIsSubmitting(true);
-          await formAction(...args);
-          setIsSubmitting(false);
-        }}
+        action={formAction}
         className="space-y-4 w-full"
         encType="multipart/form-data"
       >
@@ -367,27 +366,9 @@ function ReportForm() {
           <Input type="tel" id="suspectPhone" name="suspectPhone" />
         </div>
 
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting && (
-            <svg
-              className="animate-spin mr-2 h-4 w-4 inline-block"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-                fill="none"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8v8z"
-              />
-            </svg>
+        <Button type="submit" disabled={isPending} className="w-[200px]">
+          {isPending && (
+            <Loader className="mr-2 h-4 w-4 transition-all  animate-spin" />
           )}
           {t("reportForm.button.submit")}
         </Button>
