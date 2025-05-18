@@ -32,9 +32,13 @@ import {
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-export function DatePicker() {
-  const [date, setDate] = React.useState<Date>();
-
+export function DatePicker({
+  date,
+  setDate,
+}: {
+  date: Date | undefined;
+  setDate: (date: Date | undefined) => void;
+}) {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -45,7 +49,7 @@ export function DatePicker() {
             !date && "text-muted-foreground"
           )}
         >
-          <CalendarIcon />
+          <CalendarIcon className="mr-2 h-4 w-4" />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
@@ -85,6 +89,7 @@ function ReportForm() {
   const [uploadProgress, setUploadProgress] = React.useState<number>(0);
   const [isUploading, setIsUploading] = React.useState<boolean>(false);
   const [isDragActive, setIsDragActive] = React.useState(false);
+  const [reportDate, setReportDate] = React.useState<Date | undefined>();
 
   // File preview effect
   React.useEffect(() => {
@@ -192,7 +197,14 @@ function ReportForm() {
         <div className="flex flex-col gap-2 md:flex-row w-full md:gap-4">
           <div className="flex flex-col gap-2 w-full">
             <Label htmlFor="date">{t("reportForm.label.dateOptional")}</Label>
-            <DatePicker />
+            <DatePicker date={reportDate} setDate={setReportDate} />
+            {reportDate && (
+              <input
+                type="hidden"
+                name="date"
+                value={format(reportDate, "yyyy-MM-dd")}
+              />
+            )}
           </div>
           <div className="flex flex-col gap-2 w-full">
             <Label htmlFor="place">
@@ -371,7 +383,7 @@ function ReportForm() {
           <Input type="tel" id="suspectPhone" name="suspectPhone" />
         </div>
 
-        <Button type="submit" disabled={isPending} className="w-[200px]">
+        <Button type="submit" disabled={isPending} className="w-full">
           {isPending && (
             <Loader className="mr-2 h-4 w-4 transition-all  animate-spin" />
           )}

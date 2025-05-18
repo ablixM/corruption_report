@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { useTranslations } from "next-intl";
 import ReportForm from "./report-form";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
 const Hero = () => {
   const t = useTranslations();
@@ -29,24 +30,24 @@ const Hero = () => {
   return (
     <section className="my-4 min-h-screen w-full bg-background">
       <div className="lg:grid flex flex-col items-start justify-center w-full lg:gap-8 gap-4 lg:grid-cols-2 mt-12  px-4 ">
-        <div className="flex flex-col  justify-start text-start items-start lg:text-left w-full lg:border-r border-b lg:border-b-0 h-full">
+        <div className="flex flex-col  justify-start lg:pl-16  md:items-start text-start items-start lg:text-left w-full lg:border-r border-b lg:border-b-0 h-full  border-accent rounded-2xl p-4">
           {hero.badge && (
             <Badge variant="outline" className=" hidden lg:block py-2  text-sm">
               {hero.badge}
             </Badge>
           )}
-          <h1 className="lg:my-6 my:2 text-2xl md:text-4xl font-bold text-pretty lg:text-6xl my-2">
+          <h1 className="lg:my-6 my:2 text-2xl md:text-4xl font-bold text-pretty lg:text-6xl my-2 bg-gradient-to-r from-blue-700 to-yellow-400 bg-clip-text text-transparent">
             {hero.heading}
           </h1>
-          <div className="max-w-[500px]">
-            <p className="mb-2 max-w-xl text-muted-foreground text-xs lg:text-xl">
-              {hero.subHeading}
-            </p>
-            <p>
-              <span className="text-red-500 text-xs lg:text-sm">
-                {hero.description}
-              </span>
-            </p>
+          <div>
+            <Alert
+              variant={"destructive"}
+              className="w-full bg-blue-300/50 dark:bg-blue-300/20"
+            >
+              <AlertTitle> {hero.subHeading}</AlertTitle>
+              <AlertDescription>{hero.description}</AlertDescription>
+            </Alert>
+
             <p className="mt-4 text-muted-foreground text-xs lg:text-sm">
               {hero.subText}
             </p>
@@ -65,7 +66,7 @@ const Hero = () => {
             )}
           </div>
         </div>
-        <div className=" h-full   w-full min-h-screen flex items-center justify-center ">
+        <div className=" h-full    w-full min-h-screen flex items-center justify-center ">
           <ReportForm />
         </div>
       </div>

@@ -47,7 +47,11 @@ const Navbar = () => {
 
   const menu = t.raw("menu") as { title: string; url: string }[];
   return (
-    <section className={`lg:py-4 z-50 relative py-2 px-4  border-b   w-full `}>
+    <section
+      className={
+        "lg:py-4 z-50 relative py-2 px-4  border-b   w-full  bg-[url(/bgImage1.png)] bg-contain bg-no-repeat "
+      }
+    >
       <div className=" ">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex">
