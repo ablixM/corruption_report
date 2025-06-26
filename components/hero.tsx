@@ -1,12 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
-
 import { Badge } from "@/components/ui/badge";
-
 import Link from "next/link";
-
 import { useTranslations } from "next-intl";
-import ReportForm from "./report-form";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import ReportTabs from "./report-tabs";
 
 const Hero = () => {
   const t = useTranslations();
@@ -30,7 +27,7 @@ const Hero = () => {
   return (
     <section className="my-4 min-h-screen w-full bg-background">
       <div className="lg:grid flex flex-col items-start justify-center w-full lg:gap-8 gap-4 lg:grid-cols-2 mt-12  px-4 ">
-        <div className="flex flex-col  justify-start lg:pl-16  md:items-start text-start items-start lg:text-left w-full lg:border-r border-b lg:border-b-0 h-full  border-accent rounded-2xl p-4">
+        <div className="flex flex-col  justify-start lg:pl-16  md:items-start text-start items-start lg:text-left w-full lg:border-r border-b lg:border-b-0 h-full  border-accent rounded-2xl">
           {hero.badge && (
             <Badge variant="outline" className=" hidden lg:block py-2  text-sm">
               {hero.badge}
@@ -44,7 +41,9 @@ const Hero = () => {
               variant={"destructive"}
               className="w-full bg-blue-300/50 dark:bg-blue-300/20"
             >
-              <AlertTitle> {hero.subHeading}</AlertTitle>
+              <AlertTitle className="line-clamp-2">
+                {hero.subHeading}
+              </AlertTitle>
               <AlertDescription>{hero.description}</AlertDescription>
             </Alert>
 
@@ -66,8 +65,8 @@ const Hero = () => {
             )}
           </div>
         </div>
-        <div className=" h-full    w-full min-h-screen flex items-center justify-center ">
-          <ReportForm />
+        <div className=" w-full ">
+          <ReportTabs />
         </div>
       </div>
     </section>

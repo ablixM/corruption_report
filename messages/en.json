@@ -1,20 +1,20 @@
 {
   "logo": {
-    "alt": "logo",
-    "title": "Yeka Report"
+    "alt": "Logo",
+    "title": "Yeka Sub-City Administration"
   },
   "menu": [
     {
-      "title": "Check Status",
+      "title": "Check Report Status",
       "url": "status"
     }
   ],
   "hero": {
-    "badge": "Provided by Yeka Innovation Office",
-    "heading": "Yeka Innovation Office",
-    "subHeading": "Use this form to report misconduct with confidentiality and integrity.",
-    "description": "The information you provide will remain fully confidential and accessible only to authorized investigators. It will not be shared with any unauthorized parties.",
-    "subText": "Click the link below to check the status of your submission.",
+    "badge": "Presented by Yeka Innovation Office",
+    "heading": "Yeka Sub-City Administration Complaint Form",
+    "subHeading": "Use this form to submit your report securely and confidentially.",
+    "description": "All information provided will be kept confidential and will only be accessible to authorized personnel for investigation purposes. No information will be shared with unauthorized parties.",
+    "subText": "Click the link below to check the status of your report",
     "buttons": {
       "primary": {
         "text": "Check Report Status",
@@ -23,58 +23,113 @@
     },
     "image": {
       "src": "https://www.shadcnblocks.com/images/block/placeholder-1.svg",
-      "alt": "Hero section demo image showing interface components"
+      "alt": "Descriptive image showing key parts of the application"
     }
+  },
+  "tabs": {
+    "report": "Report",
+    "complaint": "Complaint Report"
   },
   "reportForm": {
     "section": {
-      "yourInfo": "Your Information",
-      "corruptionReport": "Corruption Report",
-      "suspectInfo": "Suspect's Information (Optional)"
+      "yourInfo": "Enter Your Information",
+      "corruptionReport": "Report Information"
     },
     "label": {
       "name": "Name",
-      "optional": "(optional)",
+      "optional": "(Optional)",
       "phone": "Phone",
       "email": "Email",
       "address": "Address",
-      "dateOptional": "Date (optional)",
-      "place": "Location where incident happened",
-      "officeName": "Yeka Office Where the Incident Occurred",
-      "corruptionType": "Corruption Type",
+      "dateOptional": "Date (Optional)",
+      "place": "Woreda",
+      "woreda": "Woreda",
+      "subcity": "Subcity",
+      "selectPlaceType": "Select Place Type",
+      "complaintPlace": "Complaint Place",
+      "officeName": "Office Name",
+      "corruptionType": "Report Type",
       "description": "Description",
-      "evidence": "Evidence (image or document)",
-      "suspectName": "Suspects Name",
-      "suspectPosition": "Suspect's position",
-      "suspectPhone": "Suspect's phone number"
+      "evidence": "Evidence (Image or Document)"
     },
     "placeholder": {
-      "corruptionType": "Select corruption type",
+      "corruptionType": "Select report type",
       "pickDate": "Pick a date"
     },
     "file": {
-      "change": "Change file (drag or click)",
-      "drag": "Drag & drop or click to upload",
+      "change": "Change file (drag and drop or click)",
+      "drag": "Drag and drop or click to upload",
       "uploading": "Uploading... {progress}%",
       "pdf": "PDF",
       "doc": "DOC",
-      "file": "FILE"
+      "file": "File",
+      "remove": "Remove"
     },
     "button": {
       "submit": "Submit Report"
     },
-    "corruptionTypes": {
-      "bribery": "Bribery",
-      "embezzlement": "Embezzlement",
-      "fraud": "Fraud",
-      "abuseOfPower": "Abuse of Power",
-      "nepotism": "Nepotism",
-      "extortion": "Extortion",
-      "other": "Other"
+    "error": {
+      "required": "This field is required.",
+      "invalid": "Invalid format.",
+      "phone": "Please enter a valid phone number.",
+      "place": "Please enter the report place.",
+      "subcity": "Please enter Subcity.",
+      "complaintType": "Please select a complaint type.",
+      "officeName": "Please enter the office name.",
+      "description": "Description must be at least 10 words."
+    },
+    "toast": {
+      "success": "Report submitted successfully.",
+      "error": "Failed to submit report."
+    },
+    "loading": "Loading report types...",
+    "error-corruption-types": "Failed to load report types.",
+    "dialog": {
+      "successTitle": "Report Submitted Successfully!",
+      "successDescription": "Please keep this ticket number safe. Click the link below with your ticket number to check the status of your report.",
+      "uploadingTitle": "Submitting Report...",
+      "checkStatus": "Check Report Status",
+      "ticketNumberLabel": "Your Ticket Number:",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "uploading": "Uploading, please wait",
+      "close": "Close"
+    }
+  },
+  "complaintForm": {
+    "section": {
+      "yourInfo": "Enter Your Information",
+      "complaintDetails": "Complaint Details"
+    },
+    "label": {
+      "name": "Name",
+      "optional": "(Optional)",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "dateOptional": "Date (Optional)",
+      "place": "Woreda",
+      "woreda": "Woreda",
+      "subcity": "Subcity",
+      "selectPlaceType": "Select Place Type",
+      "complaintPlace": "Complaint Place",
+      "officeName": "Office Name",
+      "description": "Description"
     },
     "error": {
       "required": "This field is required.",
-      "invalid": "Invalid value."
-    }
+      "invalid": "Invalid format.",
+      "phone": "Please enter a valid phone number.",
+      "place": "Please enter the complaint place.",
+      "officeName": "Please enter the office name."
+    },
+    "dialog": {
+      "success": "Complaint Submitted Successfully!",
+      "uploading": "Submitting Complaint...",
+      "ticketNumber": "Your Ticket Number:",
+      "copy": "Copy",
+      "close": "Close"
+    },
+    "submit": "Submit Complaint"
   }
 }

@@ -32,7 +32,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild className="min-w-[100px] border-black">
         <Button variant="outline" size="sm">
           🌐 {currentLocale.toUpperCase()} <ChevronDown />

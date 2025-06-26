@@ -1,18 +1,18 @@
 {
   "logo": {
     "alt": "አርማ",
-    "title": "የካ ሪፖርት"
+    "title": "የካ ክፍለ ከተማ አስተዳደር"
   },
   "menu": [
     {
-      "title": "ሁኔታ ያረጋግጡ",
+      "title": "ሪፖርት ሁኔታ ያረጋግጡ",
       "url": "status"
     }
   ],
   "hero": {
     "badge": "በየካ ኢኖቬሽን ቢሮ የቀረበ",
-    "heading": "የካ ኢኖቬሽን ቢሮ",
-    "subHeading": "ይህንን ቅጽ ተጠቅመው ሙስናን አስተማማኝነቱና ምስጢራዊነቱ በተጠበቀ መልኩ ሪፖርት ያድርጉ፡፡",
+    "heading": "የካ ክፍለ ከተማ አስተዳደር ቅሬታ ማቅረቢያ ቅጽ",
+    "subHeading": "ይህንን ቅጽ ተጠቅመው  አስተማማኝነቱና ምስጢራዊነቱ በተጠበቀ መልኩ ሪፖርት ያድርጉ፡፡",
     "description": "የሰጡት መረጃ በሙሉ ሚስጥራዊነቱ የተጠበቀ ሲሆን ለምርመራ ስራ ለተፈቀደላቸዉ አካላት ብቻ ተደራሽ ይሆናል፡፡ ምንም አይነት መረጃ ከተጠቀሱት አካላት ዉጪ ተላልፎ አይሰጥም።",
     "subText": "ጥቆማዎ ምን ላይ እንደደረሰ ለማየት ቀጥሎ ያለውን ሊንክ ይጫኑ",
     "buttons": {
@@ -26,11 +26,14 @@
       "alt": "መግለጫ ምስል፣ የመተግበሪያ ቁልፍ ክፍሎችን እየሳየ"
     }
   },
+  "tabs": {
+    "report": "የጥቆማ ሪፖርት",
+    "complaint": "የቅሬታ ሪፖርት"
+  },
   "reportForm": {
     "section": {
-      "yourInfo": "የእርስዎ መረጃ",
-      "corruptionReport": "የሙስና ሪፖርት",
-      "suspectInfo": "የተጠርጣሪ መረጃ (አማራጭ)"
+      "yourInfo": "የእርስዎ መረጃ ያስገቡ",
+      "corruptionReport": "የቅሬታ ሪፖርት"
     },
     "label": {
       "name": "ስም",
@@ -39,17 +42,18 @@
       "email": "ኢሜይል",
       "address": "አድራሻ",
       "dateOptional": "ቀን (አማራጭ)",
-      "place": "የክስተቱ ቦታ",
-      "officeName": "የተከሰተበት የየካ ቢሮ",
-      "corruptionType": "የሙስና አይነት",
+      "place": "ወረዳ",
+      "woreda": "ወረዳ",
+      "subcity": "ክፍለ ከተማ",
+      "selectPlaceType": "የቦታው አይነት",
+      "complaintPlace": "ጥቆማ የቀረበበት ቦታ",
+      "officeName": "የተከሰተበት ቢሮ",
+      "corruptionType": "የቅሬታ አይነት",
       "description": "መግለጫ",
-      "evidence": "ማስረጃ (ምስል ወይም ሰነድ)",
-      "suspectName": "ጥቆማ የቀረበበት አካልአካል ስም",
-      "suspectPosition": "ጥቆማ የቀረበበት አካልአካል የየስራ መደብ",
-      "suspectPhone": "ጥቆማ የቀረበበት አካልአካል ስልክ ቁጥር"
+      "evidence": "ማስረጃ (ምስል ወይም ሰነድ)"
     },
     "placeholder": {
-      "corruptionType": "የሙስና አይነት ይምረጡ",
+      "corruptionType": "የጥቆማ አይነት ይምረጡ",
       "pickDate": "ቀን ይምረጡ"
     },
     "file": {
@@ -58,23 +62,74 @@
       "uploading": "በመጫን ላይ... {progress}%",
       "pdf": "PDF",
       "doc": "DOC",
-      "file": "ፋይል"
+      "file": "ፋይል",
+      "remove": "አስወገድ"
     },
     "button": {
       "submit": "ሪፖርት ያስገቡ"
     },
-    "corruptionTypes": {
-      "bribery": "ማስገባት",
-      "embezzlement": "ማስታገድ",
-      "fraud": "ማታለል",
-      "abuseOfPower": "ስልጣን ውስጥ መጠቀም",
-      "nepotism": "የቤተሰብ ማስተዳደር",
-      "extortion": "መጫናት",
-      "other": "ሌላ"
+    "error": {
+      "required": "ይህ መስክ አስፈላጊ ነው።",
+      "invalid": "የተሳሳተ እትም.",
+      "phone": "እባክዎ ትክክለኛ የስልክ ቁጥር ያስገቡ።",
+      "place": "እባክዎ የጥቆማ ወረዳ ያስገቡ።",
+      "subcity": "እባክዎ ክፍለ ከተማ ያስገቡ።",
+      "complaintType": "እባክዎ የቅሬታ አይነት ያስገቡ ",
+      "officeName": "እባክዎ የቢሮውን ስም ያስገቡ።",
+      "description": "መግለጫው ቢያንስ 10 ቃላቶች መሆን አለበት።"
+    },
+    "toast": {
+      "success": "ሪፖርቱ በተሳካ ሁኔታ ተልኳል።",
+      "error": "ሪፖርት መላክ አልተቻለም።"
+    },
+    "loading": "ይጥቆማ አይነት በማምጣት ላይ...",
+    "error-corruption-types": "የጥቆማ አይነት ማምጣት ላይ አልተቻለም።",
+    "dialog": {
+      "successTitle": "ሪፖርቱ በተሳካ ሁኔታ ተልኳል!",
+      "successDescription": "ይህን የትኬት ቁጥር በጥንቃቄ ይያዙ፣ ጥቆማዎ ያለበትን ሁኔታ ለማወቅ የትኬት ቁጥርን በመያዝ ከስር ያለውን ሊንክ ይጫኑ ",
+      "uploadingTitle": "ሪፖርት በመላክ ላይ...",
+      "checkStatus": "ሪፖርት ሁኔታ ያረጋግጡ",
+      "ticketNumberLabel": "የቲኬት ቁጥርዎ:",
+      "copy": "ቅዳ",
+      "copied": "ተቀድቷል!",
+      "uploading": "በመጫን ላይ እባክዎ ይጠብቁ",
+      "close": "ዝጋ"
+    }
+  },
+  "complaintForm": {
+    "section": {
+      "yourInfo": "የእርስዎ መረጃ ያስገቡ",
+      "complaintDetails": "የቅሬታ ዝርዝር"
+    },
+    "label": {
+      "name": "ስም",
+      "optional": "(አማራጭ)",
+      "phone": "ስልክ",
+      "email": "ኢሜይል",
+      "address": "አድራሻ",
+      "dateOptional": "ቀን (አማራጭ)",
+      "place": "ወረዳ",
+      "woreda": "ወረዳ",
+      "subcity": "ሴክተር",
+      "selectPlaceType": "የቦታው አይነት",
+      "complaintPlace": "ቅሬታ የቀረበበት ቦታ",
+      "officeName": "የተከሰተበት ቢሮ",
+      "description": "መግለጫ"
     },
     "error": {
       "required": "ይህ መስክ አስፈላጊ ነው።",
-      "invalid": "የተሳሳተ እትም."
-    }
+      "invalid": "የተሳሳተ እትም.",
+      "phone": "እባክዎ ትክክለኛ የስልክ ቁጥር ያስገቡ።",
+      "place": "እባክዎ የቅሬታ ወረዳ ያስገቡ።",
+      "officeName": "እባክዎ የቢሮውን ስም ያስገቡ።"
+    },
+    "dialog": {
+      "success": "ቅሬታው በተሳካ ሁኔታ ተልኳል!",
+      "uploading": "ቅሬታ በመላክ ላይ...",
+      "ticketNumber": "የቲኬት ቁጥርዎ:",
+      "copy": "ቅዳ",
+      "close": "ዝጋ"
+    },
+    "submit": "ቅሬታ ያስገቡ"
   }
 }
